@@ -1,424 +1,180 @@
+```html
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HHT Freight Group | 3PL Logistics USA</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-[data-theme="dark"]{
-  --bg:#0B1C2E;--bg2:#0d1f30;--bg3:#122236;
-  --fg:#ffffff;--fg2:rgba(255,255,255,0.65);--fg3:rgba(255,255,255,0.35);
-  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
-  --card:#122236;--card2:#142840;
-  --accent:#FF6D00;--accent2:#E65100;
-  --nav:rgba(11,28,46,0.97);--input:rgba(255,255,255,0.05);
-  --strip:#E65100;--stat-card:#0d1f30;--footer:#070f18;
+:root{
+  --navy:#0B1C2E;
+  --navy2:#122236;
+  --blue:#1565C0;
+  --orange:#E65100;
+  --orange2:#FF6D00;
+  --white:#fff;
+  --gray:#8899AA;
+  --border:rgba(255,255,255,0.08);
 }
-[data-theme="light"]{
-  --bg:#ffffff;--bg2:#F9FAFB;--bg3:#F3F4F6;
-  --fg:#111827;--fg2:#6B7280;--fg3:#9CA3AF;
-  --border:#E5E7EB;--border2:#D1D5DB;
-  --card:#ffffff;--card2:#F9FAFB;
-  --accent:#C0392B;--accent2:#E74C3C;
-  --nav:rgba(255,255,255,0.97);--input:#F9FAFB;
-  --strip:#C0392B;--stat-card:#F3F4F6;--footer:#111827;
+
+body{font-family:'Barlow',sans-serif;background:var(--navy);color:#fff}
+
+/* NAV */
+nav{position:fixed;width:100%;background:#0B1C2E;padding:15px 5vw;display:flex;justify-content:space-between;z-index:100}
+.logo{font-weight:800}
+.logo span{color:var(--orange2)}
+nav ul{display:flex;gap:20px;list-style:none}
+nav a{color:#ccc;text-decoration:none}
+.nav-cta{background:var(--orange);color:#fff;padding:8px 18px;border:none}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 5vw;position:relative}
+.hero-content{max-width:600px}
+.hero h1{font-size:60px}
+.hero h1 span{color:var(--orange2)}
+.hero p{margin:20px 0;color:#bbb}
+
+/* HERO IMAGE */
+.hero-image{
+  position:absolute;
+  right:5vw;
+  bottom:60px;
+  width:450px;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden;transition:background .3s,color .3s}
+.hero-image img{
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--nav);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:68px;transition:background .3s,border-color .3s}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:36px;height:36px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;letter-spacing:-0.5px;transition:background .3s}
-.logo-text{font-size:16px;font-weight:700;color:var(--fg);letter-spacing:0.3px;transition:color .3s}
-.logo-text span{color:var(--accent);transition:color .3s}
-nav ul{list-style:none;display:flex;gap:36px}
-nav ul a{color:var(--fg2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-nav ul a:hover{color:var(--accent)}
-.nav-right{display:flex;align-items:center;gap:16px}
-.nav-cta{background:var(--fg);color:var(--bg);border:none;padding:10px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .3s,color .3s}
-.nav-cta:hover{background:var(--accent);color:#fff}
-.theme-toggle{width:52px;height:28px;background:var(--border2);border:1px solid var(--border2);cursor:pointer;position:relative;transition:background .3s;flex-shrink:0;display:flex;align-items:center;padding:3px}
-.toggle-thumb{width:22px;height:22px;background:var(--accent);transition:transform .3s,background .3s;display:flex;align-items:center;justify-content:center;font-size:12px}
-[data-theme="light"] .toggle-thumb{transform:translateX(24px)}
-[data-theme="dark"] .toggle-thumb{transform:translateX(0)}
+/* HERO BOXES */
+.hero-boxes{
+  position:absolute;
+  right:5vw;
+  top:120px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.hbox{
+  background:rgba(255,255,255,0.05);
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+.hbox h4{font-size:12px;color:var(--orange2)}
+.hbox p{font-size:13px;color:#ccc}
 
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:68px 5vw 0;background:var(--bg);transition:background .3s}
-.hero-left{padding:80px 0}
-.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:28px}
-.eyebrow-line{width:32px;height:2px;background:var(--accent);transition:background .3s}
-.eyebrow-text{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);transition:color .3s}
-.hero h1{font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.05;letter-spacing:-2px;color:var(--fg);margin-bottom:24px;transition:color .3s}
-.hero h1 em{font-style:normal;color:var(--accent);transition:color .3s}
-.hero-desc{font-size:17px;color:var(--fg2);line-height:1.75;max-width:480px;margin-bottom:44px;transition:color .3s}
-.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.btn-dark{background:var(--fg);color:var(--bg);border:none;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:background .3s,color .3s}
-.btn-dark:hover{background:var(--accent);color:#fff}
-.btn-ghost{background:transparent;color:var(--fg);border:1.5px solid var(--border2);padding:14px 28px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.hero-right{height:100%;display:flex;align-items:center;justify-content:center;padding:80px 0 80px 60px}
-.hero-visual{width:100%;background:var(--bg2);padding:32px;transition:background .3s}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat-box{background:var(--stat-card);border:1px solid var(--border);padding:28px 24px;transition:background .3s,border-color .3s}
-.stat-box.accent{background:var(--accent);border-color:var(--accent)}
-.stat-box .num{font-size:42px;font-weight:800;letter-spacing:-2px;color:var(--fg);line-height:1;transition:color .3s}
-.stat-box.accent .num{color:#fff}
-.stat-box .lbl{font-size:11px;color:var(--fg3);text-transform:uppercase;letter-spacing:1px;margin-top:6px;font-weight:600;transition:color .3s}
-.stat-box.accent .lbl{color:rgba(255,255,255,0.75)}
-.hero-strip{background:var(--fg);padding:14px 24px;margin-top:12px;display:flex;align-items:center;gap:8px;transition:background .3s}
-.strip-dot{width:6px;height:6px;background:var(--accent);flex-shrink:0;transition:background .3s}
-.strip-txt{font-size:12px;color:var(--bg);font-weight:600;letter-spacing:0.5px;transition:color .3s}
+/* SERVICES */
+.services{padding:80px 5vw;background:#0d1f30}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.service-card{background:#122236;padding:20px}
+.service-img{width:100%;height:150px;object-fit:cover;margin-bottom:10px}
 
-.ticker{background:var(--strip);padding:18px 5vw;display:flex;gap:48px;overflow:hidden;transition:background .3s}
-.tick-item{display:flex;align-items:center;gap:8px;white-space:nowrap}
-.tick-item span{font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase}
-.tick-sep{color:rgba(255,255,255,0.35);font-size:16px}
+/* CONTACT */
+.contact{padding:80px 5vw}
+input,textarea{width:100%;margin-bottom:10px;padding:10px;background:#111;color:#fff;border:none}
+button{padding:12px;background:var(--orange);border:none;color:#fff}
 
-.services{padding:100px 5vw;background:var(--bg);transition:background .3s}
-.sec-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px}
-.sec-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.sec-line{width:24px;height:2px;background:var(--accent);transition:background .3s}
-.sec-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);transition:color .3s}
-.sec-title{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-1.5px;color:var(--fg);line-height:1.1;transition:color .3s}
-.sec-note{font-size:15px;color:var(--fg2);line-height:1.7;max-width:340px;text-align:right;transition:color .3s}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
-.svc-card{background:var(--bg);padding:40px 28px;transition:background .3s}
-.svc-card:hover{background:var(--bg2)}
-.svc-num{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:2px;margin-bottom:28px;transition:color .3s}
-.svc-card h3{font-size:19px;font-weight:700;color:var(--fg);letter-spacing:-0.5px;margin-bottom:12px;line-height:1.25;transition:color .3s}
-.svc-card p{font-size:13px;color:var(--fg2);line-height:1.7;transition:color .3s}
-.svc-arr{margin-top:28px;width:30px;height:30px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--fg3);transition:all .3s}
-.svc-card:hover .svc-arr{border-color:var(--accent);color:var(--accent)}
+/* FOOTER */
+footer{padding:30px;text-align:center;background:#070f18}
 
-.coverage{background:var(--bg2);padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;transition:background .3s}
-.cov-visual{background:var(--bg);border:1px solid var(--border);padding:60px;text-align:center;position:relative;transition:background .3s,border-color .3s}
-.cov-num{font-size:110px;font-weight:800;letter-spacing:-6px;color:var(--fg);line-height:1;transition:color .3s}
-.cov-num span{color:var(--accent);transition:color .3s}
-.cov-sub{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--fg3);margin-top:8px;transition:color .3s}
-.cov-badge{position:absolute;top:20px;right:20px;background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;transition:background .3s}
-.feat-list{border-top:1px solid var(--border);margin-top:36px;transition:border-color .3s}
-.feat-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);transition:border-color .3s}
-.feat-row span{font-size:14px;color:var(--fg2);font-weight:500;transition:color .3s}
-.feat-check{width:20px;height:20px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700;flex-shrink:0;transition:background .3s}
-
-.about{background:var(--bg);padding:100px 5vw;transition:background .3s}
-.about-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:60px}
-.about-desc{font-size:16px;color:var(--fg2);line-height:1.8;padding-top:12px;transition:color .3s}
-.team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.t-card{background:var(--bg);padding:40px 32px;position:relative;transition:background .3s}
-.t-card:hover{background:var(--bg2)}
-.t-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s,background .3s}
-.t-card:hover .t-bar{transform:scaleX(1)}
-.t-init{width:56px;height:56px;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;margin-bottom:24px;letter-spacing:1px;transition:background .3s,color .3s}
-.t-card h4{font-size:20px;font-weight:700;color:var(--fg);letter-spacing:-0.5px;margin-bottom:4px;transition:color .3s}
-.t-role{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;transition:color .3s}
-.t-ph{font-size:13px;color:var(--fg3);transition:color .3s}
-.t-ph a{color:var(--fg3);text-decoration:none;transition:color .2s}
-.t-ph a:hover{color:var(--accent)}
-
-.contact{background:var(--bg2);padding:100px 5vw;transition:background .3s}
-.contact-wrap{display:grid;grid-template-columns:5fr 7fr;gap:80px;margin-top:0}
-.c-rows{border-top:1px solid var(--border);margin-top:40px;transition:border-color .3s}
-.c-row{padding:22px 0;border-bottom:1px solid var(--border);transition:border-color .3s}
-.c-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--fg3);margin-bottom:6px;transition:color .3s}
-.c-val{font-size:15px;color:var(--fg);line-height:1.6;font-weight:500;transition:color .3s}
-.c-val a{color:var(--fg);text-decoration:none;transition:color .2s}
-.c-val a:hover{color:var(--accent)}
-.c-form-box{background:var(--bg);border:1px solid var(--border);margin-top:40px;transition:background .3s,border-color .3s}
-.c-form-inner{padding:40px;display:flex;flex-direction:column;gap:14px}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.c-form-inner input,.c-form-inner textarea,.c-form-inner select{background:var(--input);border:1px solid var(--border);color:var(--fg);padding:13px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;width:100%;outline:none;transition:border .2s,background .3s,color .3s;-webkit-appearance:none}
-.c-form-inner input:focus,.c-form-inner textarea:focus,.c-form-inner select:focus{border-color:var(--accent)}
-.c-form-inner input::placeholder,.c-form-inner textarea::placeholder{color:var(--fg3)}
-.c-form-inner select option{background:var(--bg)}
-.c-form-inner textarea{resize:vertical;min-height:110px}
-.c-submit{background:var(--fg);color:var(--bg);border:none;padding:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;width:100%;letter-spacing:0.5px;transition:background .3s,color .3s}
-.c-submit:hover{background:var(--accent);color:#fff}
-
-footer{background:var(--footer);padding:60px 5vw 32px;transition:background .3s}
-.ft-top{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
-.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.ft-mark{width:32px;height:32px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;transition:background .3s}
-.ft-name{font-size:15px;font-weight:700;color:#fff}
-.ft-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:260px}
-.ft-col h6{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px}
-.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.ft-col ul li{font-size:13px;color:rgba(255,255,255,0.45)}
-.ft-bottom{padding-top:24px;display:flex;justify-content:center}
-.ft-bottom p{font-size:12px;color:rgba(255,255,255,0.25)}
-
-@media(max-width:900px){
-  nav ul{display:none}
-  .hero{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .svc-grid{grid-template-columns:1fr 1fr}
-  .coverage{grid-template-columns:1fr}
-  .about-top{grid-template-columns:1fr}
-  .contact-wrap{grid-template-columns:1fr}
-  .team-row{grid-template-columns:1fr}
-  .sec-hdr{flex-direction:column;align-items:flex-start}
-  .sec-note{text-align:left}
+@media(max-width:768px){
+  .hero-image,.hero-boxes{display:none}
 }
 </style>
 </head>
+
 <body>
 
 <nav>
-  <div class="logo">
-    <div class="logo-mark">HHT</div>
-    <div class="logo-text">Freight <span>Group</span></div>
-  </div>
+  <div class="logo">HHT <span>FREIGHT</span></div>
   <ul>
     <li><a href="#services">Services</a></li>
-    <li><a href="#coverage">Coverage</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-      <div class="toggle-thumb" id="toggleThumb">☀️</div>
-    </button>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
-  </div>
+  <button class="nav-cta">Get Quote</button>
 </nav>
 
-<section class="hero" id="home">
-  <div class="hero-left">
-    <div class="hero-eyebrow">
-      <div class="eyebrow-line"></div>
-      <span class="eyebrow-text">India-Based 3PL · Operating Across USA</span>
-    </div>
-    <h1>Your Freight,<br>Delivered <em>Right.</em></h1>
-    <p class="hero-desc">HHT Freight Group is an India-registered 3PL company providing comprehensive freight transportation across all 48 contiguous United States — from full truckloads to port drayage.</p>
-    <div class="hero-actions">
-      <button class="btn-dark" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote →</button>
-      <button class="btn-ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
-    </div>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Moving Freight <span>Across America</span></h1>
+    <p>Reliable logistics across all 48 states.</p>
   </div>
-  <div class="hero-right">
-    <div class="hero-visual">
-      <div class="hero-grid">
-        <div class="stat-box accent"><div class="num">48</div><div class="lbl">US States Covered</div></div>
-        <div class="stat-box"><div class="num">3PL</div><div class="lbl">Logistics Expert</div></div>
-        <div class="stat-box"><div class="num">4</div><div class="lbl">Freight Services</div></div>
-        <div class="stat-box"><div class="num" style="font-size:28px;letter-spacing:-1px">Est. 2025</div><div class="lbl">Founded in India</div></div>
-      </div>
-      <div class="hero-strip">
-        <div class="strip-dot"></div>
-        <span class="strip-txt">HHT Freight Group Pvt. Ltd. · Registered in India · Operations in USA</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<div class="ticker">
-  <div class="tick-item"><span>Full Truckload</span></div>
-  <div class="tick-sep">·</div>
-  <div class="tick-item"><span>Less Than Truckload</span></div>
-  <div class="tick-sep">·</div>
-  <div class="tick-item"><span>Drayage Services</span></div>
-  <div class="tick-sep">·</div>
-  <div class="tick-item"><span>Port-to-Port</span></div>
-  <div class="tick-sep">·</div>
-  <div class="tick-item"><span>48 Contiguous US States</span></div>
-  <div class="tick-sep">·</div>
-  <div class="tick-item"><span>Reliable · Efficient · Scalable</span></div>
-</div>
+  <!-- IMAGE -->
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7">
+  </div>
+
+  <!-- BOXES -->
+  <div class="hero-boxes">
+    <div class="hbox">
+      <h4>📞 Contact</h4>
+      <p>+91 82830 75134</p>
+    </div>
+    <div class="hbox">
+      <h4>🏢 Company</h4>
+      <p>Private Limited</p>
+    </div>
+    <div class="hbox">
+      <h4>📍 Location</h4>
+      <p>Haryana</p>
+    </div>
+    <div class="hbox">
+      <h4>🚚 Coverage</h4>
+      <p>48 States</p>
+    </div>
+  </div>
+
+</section>
 
 <section class="services" id="services">
-  <div class="sec-hdr">
-    <div>
-      <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">What We Offer</span></div>
-      <h2 class="sec-title">Freight Solutions<br>for Every Need</h2>
-    </div>
-    <p class="sec-note">End-to-end US logistics managed with precision, reliability, and scale.</p>
-  </div>
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div class="svc-num">01</div>
-      <h3>Full Truckload FTL</h3>
-      <p>Dedicated trucks for large shipments. Direct point-to-point delivery with maximum efficiency across all 48 US states.</p>
-      <div class="svc-arr">→</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-num">02</div>
-      <h3>Less Than Truckload LTL</h3>
-      <p>Cost-effective for smaller loads. Pay only for what you use without compromising on speed or reliability.</p>
-      <div class="svc-arr">→</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-num">03</div>
-      <h3>Drayage Services</h3>
-      <p>Short-distance container transport connecting US ports, rail yards, and warehouses with professional management.</p>
-      <div class="svc-arr">→</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-num">04</div>
-      <h3>Port-to-Port Transport</h3>
-      <p>Seamless intermodal logistics from port to destination. Every transfer managed so goods arrive on time.</p>
-      <div class="svc-arr">→</div>
-    </div>
-  </div>
-</section>
+  <h2>Our Services</h2>
+  <div class="services-grid">
 
-<section class="coverage" id="coverage">
-  <div>
-    <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">US Operations</span></div>
-    <h2 class="sec-title" style="margin-bottom:20px">Nationwide US Coverage</h2>
-    <p style="font-size:15px;color:var(--fg2);line-height:1.75;transition:color .3s">Operating across all 48 contiguous United States — coast to coast, port to port, warehouse to door. Managed by our India-based team with local US partners.</p>
-    <div class="feat-list">
-      <div class="feat-row"><span>East to West Coast</span><div class="feat-check">✓</div></div>
-      <div class="feat-row"><span>North to South Corridor</span><div class="feat-check">✓</div></div>
-      <div class="feat-row"><span>Major US Port Hubs</span><div class="feat-check">✓</div></div>
-      <div class="feat-row"><span>Inland Distribution</span><div class="feat-check">✓</div></div>
-      <div class="feat-row"><span>Rail Yard Connections</span><div class="feat-check">✓</div></div>
-      <div class="feat-row"><span>Industrial Zones</span><div class="feat-check">✓</div></div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" class="service-img">
+      <h3>Full Truckload</h3>
+      <p>Dedicated trucks for large shipments.</p>
     </div>
-  </div>
-  <div class="cov-visual">
-    <div class="cov-badge">All Contiguous US</div>
-    <div class="cov-num"><span>48</span></div>
-    <div class="cov-sub">States Covered</div>
-  </div>
-</section>
 
-<section class="about" id="about">
-  <div class="about-top">
-    <div>
-      <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Who We Are</span></div>
-      <h2 class="sec-title">The Team Behind<br>HHT Freight</h2>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" class="service-img">
+      <h3>LTL</h3>
+      <p>Cost effective shipping.</p>
     </div>
-    <p class="about-desc">A Private Limited Company registered in India, founded August 2025, with a mission to deliver scalable and reliable third-party logistics services across the United States.</p>
-  </div>
-  <div class="team-row">
-    <div class="t-card">
-      <div class="t-bar"></div>
-      <div class="t-init">HC</div>
-      <h4>Himanshu Chaudhary</h4>
-      <div class="t-role">Director</div>
-      <div class="t-ph"><a href="tel:+918283075134">+91 82830 75134</a></div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e" class="service-img">
+      <h3>Drayage</h3>
+      <p>Port and rail connections.</p>
     </div>
-    <div class="t-card">
-      <div class="t-bar"></div>
-      <div class="t-init">HS</div>
-      <h4>Harpreet Singh</h4>
-      <div class="t-role">Director</div>
-      <div class="t-ph"><a href="tel:+919729703590">+91 97297 03590</a></div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088" class="service-img">
+      <h3>Port Transport</h3>
+      <p>Seamless logistics.</p>
     </div>
-    <div class="t-card">
-      <div class="t-bar"></div>
-      <div class="t-init">TK</div>
-      <h4>Twinkle Kala</h4>
-      <div class="t-role">Director</div>
-      <div class="t-ph"><a href="tel:+919915352975">+91 99153 52975</a></div>
-    </div>
+
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="sec-eyebrow"><div class="sec-line"></div><span class="sec-tag">Get in Touch</span></div>
-  <h2 class="sec-title">Let's Move Your<br>Freight Forward</h2>
-  <div class="contact-wrap">
-    <div>
-      <div class="c-rows">
-        <div class="c-row">
-          <div class="c-lbl">Registered Address (India)</div>
-          <div class="c-val">H No. 847, Sector 6, Dharuhera<br>Rewari, Haryana — 123106, India</div>
-        </div>
-        <div class="c-row">
-          <div class="c-lbl">Email</div>
-          <div class="c-val"><a href="mailto:hhtfreightgroup@gmail.com">hhtfreightgroup@gmail.com</a></div>
-        </div>
-        <div class="c-row">
-          <div class="c-lbl">Contact Numbers</div>
-          <div class="c-val">
-            Himanshu Chaudhary — <a href="tel:+918283075134">+91 82830 75134</a><br>
-            Harpreet Singh — <a href="tel:+919729703590">+91 97297 03590</a><br>
-            Twinkle Kala — <a href="tel:+919915352975">+91 99153 52975</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="c-form-box">
-      <div class="c-form-inner">
-        <div class="f-row">
-          <input type="text" placeholder="Your Name">
-          <input type="text" placeholder="Company Name">
-        </div>
-        <div class="f-row">
-          <input type="email" placeholder="Email Address">
-          <input type="tel" placeholder="Phone Number">
-        </div>
-        <select>
-          <option value="" disabled selected>Select Service Type</option>
-          <option>Full Truckload (FTL)</option>
-          <option>Less Than Truckload (LTL)</option>
-          <option>Drayage Services</option>
-          <option>Port-to-Port Transport</option>
-        </select>
-        <textarea placeholder="Describe your freight requirements, origin, destination..."></textarea>
-        <button class="c-submit">Send Quote Request →</button>
-      </div>
-    </div>
-  </div>
+  <h2>Contact Us</h2>
+  <input type="text" placeholder="Name">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <button>Send</button>
 </section>
 
 <footer>
-  <div class="ft-top">
-    <div>
-      <div class="ft-logo">
-        <div class="ft-mark">HHT</div>
-        <span class="ft-name">HHT Freight Group</span>
-      </div>
-      <p class="ft-desc">India-registered 3PL company providing comprehensive freight services across all 48 contiguous US states.</p>
-    </div>
-    <div class="ft-col">
-      <h6>Services</h6>
-      <ul>
-        <li>Full Truckload (FTL)</li>
-        <li>Less Than Truckload (LTL)</li>
-        <li>Drayage Services</li>
-        <li>Port-to-Port Transport</li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h6>Company</h6>
-      <ul>
-        <li>About Us</li>
-        <li>Our Team</li>
-        <li>US Coverage</li>
-        <li>Get a Quote</li>
-      </ul>
-    </div>
-    <div class="ft-col">
-      <h6>Contact</h6>
-      <ul>
-        <li>hhtfreightgroup@gmail.com</li>
-        <li>Dharuhera, Haryana, India</li>
-        <li>PIN: 123106</li>
-      </ul>
-    </div>
-  </div>
-  <div class="ft-bottom">
-    <p>© 2025 HHT Freight Group Private Limited. Registered in India. All rights reserved.</p>
-  </div>
+  <p>© 2025 HHT Freight Group</p>
 </footer>
 
-<script>
-const html = document.documentElement;
-const btn = document.getElementById('themeToggle');
-const thumb = document.getElementById('toggleThumb');
-const saved = localStorage.getItem('hht-theme') || 'dark';
-html.setAttribute('data-theme', saved);
-thumb.textContent = saved === 'dark' ? '☀️' : '🌙';
-btn.addEventListener('click', () => {
-  const curr = html.getAttribute('data-theme');
-  const next = curr === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  thumb.textContent = next === 'dark' ? '☀️' : '🌙';
-  localStorage.setItem('hht-theme', next);
-});
-</script>
 </body>
 </html>
+```
