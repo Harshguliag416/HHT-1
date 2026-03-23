@@ -1,125 +1,73 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HHT Freight Group | 3PL Logistics USA</title>
+<!-- ONLY SHOWING EXACT PLACES YOU NEED TO UPDATE -->
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+<!-- 🔥 1. REPLACE THIS (hero truck emoji) -->
+<!-- OLD -->
+<div class="hero-truck">🚛</div>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#0B1C2E;
-  --navy2:#122236;
-  --orange:#E65100;
-  --orange2:#FF6D00;
-  --white:#fff;
-}
-body{font-family:'Barlow',sans-serif;background:var(--navy);color:#fff}
+<!-- NEW -->
+<div class="hero-truck">
+  <img src="images/hero-truck.jpg" alt="Truck">
+</div>
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:80px 5vw;
-  position:relative;
-}
-.hero-content{max-width:600px}
-.hero h1{font-size:60px}
-.hero h1 span{color:var(--orange2)}
-.hero p{margin:20px 0;color:#bbb}
 
-/* HERO IMAGE */
-.hero-image{
+<!-- 🔥 2. ADD THIS CSS (JUST BELOW .hero-truck) -->
+.hero-truck{
   position:absolute;
   right:5vw;
-  bottom:60px;
-  width:500px;
+  bottom:80px;
+  z-index:2;
+  width:420px;
+  opacity:0.9;
 }
-.hero-image img{
+.hero-truck img{
   width:100%;
-  border-radius:10px;
+  border-radius:8px;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
 
-/* SERVICES */
-.services{
-  padding:80px 5vw;
-  background:#0d1f30;
-}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-.service-card{
-  background:var(--navy2);
-  padding:20px;
-}
+
+<!-- 🔥 3. UPDATE SERVICES SECTION -->
+
+<!-- FTL -->
+<div class="service-card">
+  <img src="images/ftl-truck-loading.jpg" class="service-img">
+  <div class="service-icon">🚛</div>
+  <h3>Full Truckload (FTL)</h3>
+  <p>Dedicated trucks for large shipments. Maximum efficiency, minimum handling.</p>
+</div>
+
+<!-- LTL -->
+<div class="service-card">
+  <img src="images/ltl-warehouse.jpg" class="service-img">
+  <div class="service-icon">📦</div>
+  <h3>Less Than Truckload (LTL)</h3>
+  <p>Cost-effective freight for smaller loads.</p>
+</div>
+
+<!-- DRAYAGE -->
+<div class="service-card">
+  <img src="images/port-logistics.jpg" class="service-img">
+  <div class="service-icon">⚓</div>
+  <h3>Drayage Services</h3>
+  <p>Short-distance container transport connecting ports.</p>
+</div>
+
+<!-- PORT -->
+<div class="service-card">
+  <img src="images/cargo-ship.jpg" class="service-img">
+  <div class="service-icon">🌊</div>
+  <h3>Port-to-Port Transport</h3>
+  <p>Seamless intermodal logistics.</p>
+</div>
+
+
+<!-- 🔥 4. ADD THIS CSS -->
 .service-img{
   width:100%;
   height:160px;
   object-fit:cover;
-  margin-bottom:10px;
+  margin-bottom:16px;
+  border-radius:4px;
 }
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero-image{display:none}
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Moving Freight <span>Across America</span></h1>
-    <p>Reliable logistics across all 48 states.</p>
-  </div>
-
-  <!-- HERO IMAGE -->
-  <div class="hero-image">
-    <img src="images/hero-truck.jpg" alt="Truck">
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services">
-  <h2>Our Services</h2>
-
-  <div class="services-grid">
-
-    <div class="service-card">
-      <img src="images/ftl-truck-loading.jpg" class="service-img">
-      <h3>Full Truckload (FTL)</h3>
-      <p>Dedicated trucks for large shipments.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="images/ltl-warehouse.jpg" class="service-img">
-      <h3>Less Than Truckload (LTL)</h3>
-      <p>Cost-effective freight solutions.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="images/port-logistics.jpg" class="service-img">
-      <h3>Drayage Services</h3>
-      <p>Port and rail connectivity.</p>
-    </div>
-
-    <div class="service-card">
-      <img src="images/cargo-ship.jpg" class="service-img">
-      <h3>Port-to-Port Transport</h3>
-      <p>Global shipping solutions.</p>
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
 ```
