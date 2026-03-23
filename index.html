@@ -13,26 +13,20 @@
 :root{
   --navy:#0B1C2E;
   --navy2:#122236;
-  --blue:#1565C0;
   --orange:#E65100;
   --orange2:#FF6D00;
   --white:#fff;
-  --gray:#8899AA;
-  --border:rgba(255,255,255,0.08);
 }
-
 body{font-family:'Barlow',sans-serif;background:var(--navy);color:#fff}
 
-/* NAV */
-nav{position:fixed;width:100%;background:#0B1C2E;padding:15px 5vw;display:flex;justify-content:space-between;z-index:100}
-.logo{font-weight:800}
-.logo span{color:var(--orange2)}
-nav ul{display:flex;gap:20px;list-style:none}
-nav a{color:#ccc;text-decoration:none}
-.nav-cta{background:var(--orange);color:#fff;padding:8px 18px;border:none}
-
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:80px 5vw;position:relative}
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:80px 5vw;
+  position:relative;
+}
 .hero-content{max-width:600px}
 .hero h1{font-size:60px}
 .hero h1 span{color:var(--orange2)}
@@ -43,137 +37,88 @@ nav a{color:#ccc;text-decoration:none}
   position:absolute;
   right:5vw;
   bottom:60px;
-  width:450px;
+  width:500px;
 }
 .hero-image img{
   width:100%;
   border-radius:10px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.6);
 }
-
-/* HERO BOXES */
-.hero-boxes{
-  position:absolute;
-  right:5vw;
-  top:120px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.hbox{
-  background:rgba(255,255,255,0.05);
-  padding:12px;
-  border:1px solid rgba(255,255,255,0.1);
-}
-.hbox h4{font-size:12px;color:var(--orange2)}
-.hbox p{font-size:13px;color:#ccc}
 
 /* SERVICES */
-.services{padding:80px 5vw;background:#0d1f30}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.service-card{background:#122236;padding:20px}
-.service-img{width:100%;height:150px;object-fit:cover;margin-bottom:10px}
+.services{
+  padding:80px 5vw;
+  background:#0d1f30;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.service-card{
+  background:var(--navy2);
+  padding:20px;
+}
+.service-img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  margin-bottom:10px;
+}
 
-/* CONTACT */
-.contact{padding:80px 5vw}
-input,textarea{width:100%;margin-bottom:10px;padding:10px;background:#111;color:#fff;border:none}
-button{padding:12px;background:var(--orange);border:none;color:#fff}
-
-/* FOOTER */
-footer{padding:30px;text-align:center;background:#070f18}
-
+/* RESPONSIVE */
 @media(max-width:768px){
-  .hero-image,.hero-boxes{display:none}
+  .hero-image{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">HHT <span>FREIGHT</span></div>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-cta">Get Quote</button>
-</nav>
-
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>Moving Freight <span>Across America</span></h1>
     <p>Reliable logistics across all 48 states.</p>
   </div>
 
-  <!-- IMAGE -->
+  <!-- HERO IMAGE -->
   <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7">
+    <img src="images/hero-truck.jpg" alt="Truck">
   </div>
-
-  <!-- BOXES -->
-  <div class="hero-boxes">
-    <div class="hbox">
-      <h4>📞 Contact</h4>
-      <p>+91 82830 75134</p>
-    </div>
-    <div class="hbox">
-      <h4>🏢 Company</h4>
-      <p>Private Limited</p>
-    </div>
-    <div class="hbox">
-      <h4>📍 Location</h4>
-      <p>Haryana</p>
-    </div>
-    <div class="hbox">
-      <h4>🚚 Coverage</h4>
-      <p>48 States</p>
-    </div>
-  </div>
-
 </section>
 
-<section class="services" id="services">
+<!-- SERVICES -->
+<section class="services">
   <h2>Our Services</h2>
+
   <div class="services-grid">
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" class="service-img">
-      <h3>Full Truckload</h3>
+      <img src="images/ftl-truck-loading.jpg" class="service-img">
+      <h3>Full Truckload (FTL)</h3>
       <p>Dedicated trucks for large shipments.</p>
     </div>
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f" class="service-img">
-      <h3>LTL</h3>
-      <p>Cost effective shipping.</p>
+      <img src="images/ltl-warehouse.jpg" class="service-img">
+      <h3>Less Than Truckload (LTL)</h3>
+      <p>Cost-effective freight solutions.</p>
     </div>
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e" class="service-img">
-      <h3>Drayage</h3>
-      <p>Port and rail connections.</p>
+      <img src="images/port-logistics.jpg" class="service-img">
+      <h3>Drayage Services</h3>
+      <p>Port and rail connectivity.</p>
     </div>
 
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088" class="service-img">
-      <h3>Port Transport</h3>
-      <p>Seamless logistics.</p>
+      <img src="images/cargo-ship.jpg" class="service-img">
+      <h3>Port-to-Port Transport</h3>
+      <p>Global shipping solutions.</p>
     </div>
 
   </div>
 </section>
-
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <input type="text" placeholder="Name">
-  <input type="email" placeholder="Email">
-  <textarea placeholder="Message"></textarea>
-  <button>Send</button>
-</section>
-
-<footer>
-  <p>© 2025 HHT Freight Group</p>
-</footer>
 
 </body>
 </html>
