@@ -1,373 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HHT Freight Group | 3PL Logistics USA</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#0B1C2E;--navy2:#122236;--blue2:#1976D2;--orange:#E65100;--orange2:#FF6D00;--gray:#8899AA;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15)}
-html{scroll-behavior:smooth}
-body{font-family:'Barlow',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,28,46,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:1px;color:#fff}
-.logo span{color:var(--orange2)}
-nav ul{list-style:none;display:flex;gap:32px}
-nav ul a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;transition:color .2s}
-nav ul a:hover{color:var(--orange2)}
-.nav-cta{background:var(--orange);color:#fff;border:none;padding:10px 22px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;cursor:pointer;text-transform:uppercase;transition:background .2s}
-.nav-cta:hover{background:var(--orange2)}
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:80px 5vw 60px;position:relative;overflow:hidden;gap:60px}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B1C2E 55%,#122236 100%);z-index:0}
-.hero-road{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,#0a1828,transparent);z-index:1}
-.hero-lines{position:absolute;right:0;top:0;bottom:0;width:50%;z-index:1;opacity:0.04;background:repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 80px)}
-.hero-left{position:relative;z-index:2}
-.hero-badge{display:inline-block;background:rgba(230,81,0,0.15);border:1px solid rgba(230,81,0,0.4);color:var(--orange2);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;margin-bottom:24px}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:24px}
-.hero h1 .line2{color:var(--orange2);display:block}
-.hero-desc{font-size:17px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:500px;margin-bottom:36px;font-weight:300}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{background:var(--orange);color:#fff;border:none;padding:15px 34px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.btn-primary:hover{background:var(--orange2)}
-.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);padding:15px 34px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.06)}
-.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
-.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:var(--orange2);line-height:1}
-.stat-lbl{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-.hero-right{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px}
-.hero-img-wrap{position:relative;width:100%}
-.hero-img-wrap img{width:100%;height:300px;object-fit:cover;display:block}
-.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,28,46,0.5),transparent)}
-.info-boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.info-box{background:var(--navy2);border:1px solid var(--border2);padding:20px 18px;transition:border-color .2s}
-.info-box:hover{border-color:var(--orange2)}
-.info-box-icon{font-size:20px;margin-bottom:10px}
-.info-box-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange2);margin-bottom:6px}
-.info-box-val{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5}
-.info-box-val a{color:rgba(255,255,255,0.75);text-decoration:none}
-.info-box-val a:hover{color:var(--orange2)}
-.trust{background:var(--orange);padding:24px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.trust-item{display:flex;align-items:center;gap:10px}
-.trust-icon{font-size:20px}
-.trust-text{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff}
-.services{background:#0d1f30;padding:100px 5vw}
-.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange2);margin-bottom:16px}
-.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5vw,54px);font-weight:800;text-transform:uppercase;margin-bottom:16px;line-height:1.05}
-.section-sub{font-size:16px;color:rgba(255,255,255,0.55);max-width:620px;line-height:1.7;margin-bottom:60px;font-weight:300}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px}
-.service-card{background:var(--navy2);border-left:3px solid transparent;transition:border-color .2s,background .2s;overflow:hidden}
-.service-card:hover{border-left-color:var(--orange2);background:#142840}
-.service-img{width:100%;height:180px;object-fit:cover;display:block}
-.service-body{padding:28px 28px 32px}
-.service-icon{font-size:32px;margin-bottom:14px;display:block}
-.service-card h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;color:#fff}
-.service-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300}
-/* COVERAGE / MAP */
-.coverage{background:var(--navy);padding:100px 5vw}
-.coverage-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center;margin-top:0}
-.coverage-dots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
-.cdot{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65)}
-.cdot::before{content:'';width:7px;height:7px;background:var(--orange2);flex-shrink:0}
-.map-wrap{background:#0a1828;border:1px solid var(--border2);padding:20px;position:relative}
-.map-wrap svg{width:100%;height:auto;display:block}
-.us-state{fill:#1b3a58;stroke:#0B1C2E;stroke-width:0.8;transition:fill .2s;cursor:pointer}
-.us-state:hover{fill:#FF6D00}
-.map-legend{display:flex;gap:24px;margin-top:14px;flex-wrap:wrap}
-.legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:rgba(255,255,255,0.55)}
-.legend-dot{width:10px;height:10px;flex-shrink:0}
-/* ABOUT */
-.about{background:#0d1f30;padding:100px 5vw}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:60px}
-.team-card{background:var(--navy2);padding:40px 32px;position:relative;overflow:hidden;transition:background .2s}
-.team-card:hover{background:#142840}
-.team-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.team-card:hover::after{transform:scaleX(1)}
-.team-init{width:60px;height:60px;background:var(--blue2);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:20px}
-.team-card h4{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
-.team-role{font-size:11px;color:var(--orange2);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:14px}
-.team-contact a{color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none}
-.team-contact a:hover{color:var(--orange2)}
-/* CONTACT */
-.contact{background:var(--navy);padding:100px 5vw}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contact-info{display:flex;flex-direction:column;gap:28px;margin-top:40px}
-.contact-item{display:flex;gap:14px;align-items:flex-start}
-.cicon{width:42px;height:42px;background:rgba(230,81,0,0.15);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.clabel{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.cvalue{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6}
-.cvalue a{color:rgba(255,255,255,0.85);text-decoration:none}
-.cvalue a:hover{color:var(--orange2)}
-.contact-form{display:flex;flex-direction:column;gap:14px;margin-top:40px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.contact-form input,.contact-form textarea,.contact-form select{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#fff;padding:14px 16px;font-family:'Barlow',sans-serif;font-size:14px;width:100%;outline:none;transition:border-color .2s;display:block;-webkit-appearance:none;-moz-appearance:none;appearance:none}
-.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--orange2)}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,0.3)}
-.contact-form select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath fill='%23FF6D00' d='M6 7L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:44px;background-color:rgba(255,255,255,0.05)}
-.contact-form select option{background:#0B1C2E;color:#fff}
-.contact-form textarea{resize:vertical;min-height:130px;line-height:1.6}
-.submit-btn{background:var(--orange);color:#fff;border:none;padding:16px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background .2s;width:100%;display:block}
-.submit-btn:hover{background:var(--orange2)}
-.submit-btn:disabled{background:#444;cursor:not-allowed}
-.form-msg{padding:14px 16px;font-size:14px;font-weight:600;text-align:center;display:none;margin-top:4px}
-.form-msg.success{background:rgba(0,200,100,0.12);border:1px solid rgba(0,200,100,0.3);color:#4ade80}
-.form-msg.error{background:rgba(255,80,80,0.12);border:1px solid rgba(255,80,80,0.3);color:#f87171}
-/* FOOTER */
-footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--border)}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px}
-.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:1px}
-.footer-logo span{color:var(--orange2)}
-.footer-desc{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:12px;max-width:280px}
-.footer-col h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.footer-col ul li{font-size:13px;color:rgba(255,255,255,0.5)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:center}
-.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.25)}
-@media(max-width:900px){
-  nav ul{display:none}
-  .hero{grid-template-columns:1fr}
-  .hero-right{display:none}
-  .coverage-inner{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .trust{justify-content:center}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logistics Company</title>
+  <style>
+    /* Basic Reset and Fonts */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    /* Nav Bar */
+    nav { background: #004b8d; padding: 10px 20px; position: sticky; top: 0; z-index: 100; }
+    nav ul { display: flex; justify-content: flex-start; list-style: none; }
+    nav li { margin-right: 20px; }
+    nav a { color: #fff; font-weight: bold; }
+    /* Hero Slider */
+    .hero { position: relative; overflow: hidden; }
+    .slides { display: flex; width: 300%; transition: transform 0.5s ease-in-out; }
+    .slide { flex: 1; min-width: 100%; position: relative; }
+    .slide img { width: 100%; height: auto; display: block; }
+    .slide .caption { position: absolute; bottom: 20%; left: 10%; color: #fff; font-size: 2em; }
+    .slide:nth-child(1) { background: #004b8d; }
+    .slide:nth-child(2) { background: #d62f00; }
+    .slide:nth-child(3) { background: #007f5f; }
+    /* Simple Controls */
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff;
+                 border: none; padding: 10px; cursor: pointer; }
+    .prev { left: 10px; } .next { right: 10px; }
+    /* Sections */
+    section { padding: 60px 20px; }
+    h2 { margin-bottom: 20px; color: #004b8d; }
+    .services { display: flex; flex-wrap: wrap; gap: 20px; }
+    .service { flex: 1 1 45%; background: #f4f4f4; padding: 20px; border-radius: 5px;
+               opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .service.visible { opacity: 1; transform: none; }
+    /* Contact Form */
+    form { max-width: 400px; margin: auto; display: flex; flex-direction: column; }
+    form input, form textarea { margin-bottom: 10px; padding: 8px; border: 1px solid #ccc; border-radius: 3px; }
+    form button { background: #004b8d; color: #fff; padding: 10px; border: none; cursor: pointer; }
+  </style>
 </head>
 <body>
-<nav>
-  <div class="logo">HHT <span>FREIGHT</span> GROUP</div>
-  <ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#coverage">Coverage</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
-</nav>
-<section class="hero" id="home">
-  <div class="hero-bg"></div><div class="hero-road"></div><div class="hero-lines"></div>
-  <div class="hero-left">
-    <div class="hero-badge">Established Aug 2025 · India Registered · US Operations</div>
-    <h1>Moving Freight<span class="line2">Across America</span></h1>
-    <p class="hero-desc">India-based third-party logistics built for scale. HHT Freight Group delivers reliable, efficient transportation across all 48 contiguous United States.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
-      <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
-    </div>
-    <div class="hero-stats">
-      <div><div class="stat-num">48</div><div class="stat-lbl">US States</div></div>
-      <div><div class="stat-num">4</div><div class="stat-lbl">Services</div></div>
-      <div><div class="stat-num">3PL</div><div class="stat-lbl">Experts</div></div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-img-wrap">
-      <img src="images/hero-truck.jpg" alt="HHT Freight Truck">
-      <div class="hero-img-overlay"></div>
-    </div>
-    <div class="info-boxes">
-      <div class="info-box"><div class="info-box-icon">🏢</div><div class="info-box-label">Company</div><div class="info-box-val">HHT Freight Group Pvt. Ltd.<br>Est. August 2025</div></div>
-      <div class="info-box"><div class="info-box-icon">📍</div><div class="info-box-label">Address</div><div class="info-box-val">H No. 847, Sector 6<br>Dharuhera, Haryana — 123106</div></div>
-      <div class="info-box"><div class="info-box-icon">✉️</div><div class="info-box-label">Email</div><div class="info-box-val"><a href="mailto:hhtfreightgroup@gmail.com">hhtfreightgroup@gmail.com</a></div></div>
-      <div class="info-box"><div class="info-box-icon">📞</div><div class="info-box-label">Contact</div><div class="info-box-val"><a href="tel:+918283075134">+91 82830 75134</a><br><a href="tel:+919729703590">+91 97297 03590</a><br><a href="tel:+919915352975">+91 99153 52975</a></div></div>
-    </div>
-  </div>
-</section>
-<div class="trust">
-  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Registered Company</span></div>
-  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Private Limited</span></div>
-  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">48 US States</span></div>
-  <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Scalable 3PL</span></div>
-</div>
-<section class="services" id="services">
-  <div class="section-label">What We Offer</div>
-  <h2 class="section-title">Freight Solutions<br>Built for Every Need</h2>
-  <p class="section-sub">From full truckloads to port drayage, we handle every leg of your US supply chain with precision and reliability.</p>
-  <div class="services-grid">
-    <div class="service-card"><img src="images/ftl-truck-loading.jpg" class="service-img" alt="FTL"><div class="service-body"><span class="service-icon">🚛</span><h3>Full Truckload (FTL)</h3><p>Dedicated trucks for large shipments. Maximum efficiency, minimum handling, direct point-to-point delivery across all 48 states.</p></div></div>
-    <div class="service-card"><img src="images/ltl-warehouse.jpg" class="service-img" alt="LTL"><div class="service-body"><span class="service-icon">📦</span><h3>Less Than Truckload (LTL)</h3><p>Cost-effective freight for smaller loads. Share truck space and pay only for what you use without compromising on speed.</p></div></div>
-    <div class="service-card"><img src="images/port-logistics.jpg" class="service-img" alt="Drayage"><div class="service-body"><span class="service-icon">⚓</span><h3>Drayage Services</h3><p>Short-distance container transport connecting US ports, rail yards, and warehouses. Fast and professionally managed.</p></div></div>
-    <div class="service-card"><img src="images/cargo-ship.jpg" class="service-img" alt="Port-to-Port"><div class="service-body"><span class="service-icon">🌊</span><h3>Port-to-Port Transport</h3><p>Seamless intermodal logistics from port to destination. Every transfer managed so your goods arrive on time, every time.</p></div></div>
-  </div>
-</section>
-<section class="coverage" id="coverage">
-  <div class="section-label">Our Reach</div>
-  <h2 class="section-title">Nationwide US Coverage</h2>
-  <p class="section-sub">Operating across all 48 contiguous United States — coast to coast, port to port, warehouse to door. Managed by our India-based team with local US partners.</p>
-  <div class="coverage-inner">
-    <div>
-      <div class="coverage-dots">
-        <div class="cdot">East to West Coast</div>
-        <div class="cdot">North to South Corridor</div>
-        <div class="cdot">Major US Port Hubs</div>
-        <div class="cdot">Inland Distribution</div>
-        <div class="cdot">Rail Yard Connections</div>
-        <div class="cdot">Industrial Zones</div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Slider -->
+  <section id="home" class="hero">
+    <div class="slides">
+      <div class="slide">
+        <!-- Replace with AI-generated image -->
+        <img src="https://via.placeholder.com/1600x600/004b8d/ffffff?text=Slide+1" alt="Slide 1">
+        <div class="caption">We Deliver Cargo Worldwide</div>
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/1600x600/d62f00/ffffff?text=Slide+2" alt="Slide 2">
+        <div class="caption">On Time, Every Time</div>
+      </div>
+      <div class="slide">
+        <img src="https://via.placeholder.com/1600x600/007f5f/ffffff?text=Slide+3" alt="Slide 3">
+        <div class="caption">24/7 Support & Tracking</div>
       </div>
     </div>
-    <div class="map-wrap">
-      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-        <rect width="800" height="500" fill="#0a1828"/>
-        <!-- WA --><polygon class="us-state" points="80,40 165,40 165,110 130,115 120,95 80,90" title="Washington"/>
-        <!-- OR --><polygon class="us-state" points="80,90 120,95 130,115 165,110 165,185 80,175" title="Oregon"/>
-        <!-- CA --><polygon class="us-state" points="80,175 165,185 152,335 108,352 78,300" title="California"/>
-        <!-- NV --><polygon class="us-state" points="165,185 218,172 230,265 200,330 152,335" title="Nevada"/>
-        <!-- ID --><polygon class="us-state" points="165,40 248,44 252,112 218,130 200,158 165,185 165,110" title="Idaho"/>
-        <!-- MT --><polygon class="us-state" points="165,40 335,36 330,120 252,112 248,44" title="Montana"/>
-        <!-- WY --><polygon class="us-state" points="252,112 330,120 325,195 230,188 218,130" title="Wyoming"/>
-        <!-- UT --><polygon class="us-state" points="218,130 230,188 225,265 200,260 200,158" title="Utah"/>
-        <!-- AZ --><polygon class="us-state" points="200,260 225,265 222,338 196,344 170,340 152,335 200,330" title="Arizona"/>
-        <!-- CO --><polygon class="us-state" points="230,188 325,195 320,272 228,268" title="Colorado"/>
-        <!-- NM --><polygon class="us-state" points="228,268 320,272 316,345 222,338 225,265" title="New Mexico"/>
-        <!-- ND --><polygon class="us-state" points="330,120 430,116 428,175 325,178" title="North Dakota"/>
-        <!-- SD --><polygon class="us-state" points="325,178 428,175 425,235 320,238" title="South Dakota"/>
-        <!-- NE --><polygon class="us-state" points="320,238 425,235 421,280 316,278" title="Nebraska"/>
-        <!-- KS --><polygon class="us-state" points="316,278 421,280 418,320 313,318" title="Kansas"/>
-        <!-- OK --><polygon class="us-state" points="313,318 418,320 415,360 370,363 366,373 310,370" title="Oklahoma"/>
-        <!-- TX --><polygon class="us-state" points="310,370 366,373 370,363 415,360 424,432 384,465 336,455 298,420" title="Texas"/>
-        <!-- MN --><polygon class="us-state" points="428,116 495,118 492,185 455,190 428,175" title="Minnesota"/>
-        <!-- IA --><polygon class="us-state" points="428,175 492,185 488,230 421,232 425,235" title="Iowa"/>
-        <!-- MO --><polygon class="us-state" points="421,232 488,230 484,298 418,296 421,280" title="Missouri"/>
-        <!-- AR --><polygon class="us-state" points="418,296 484,298 480,342 414,340 418,320" title="Arkansas"/>
-        <!-- LA --><polygon class="us-state" points="414,340 480,342 476,382 445,390 414,372" title="Louisiana"/>
-        <!-- WI --><polygon class="us-state" points="492,185 532,172 540,222 508,228 488,230" title="Wisconsin"/>
-        <!-- IL --><polygon class="us-state" points="488,230 508,228 512,295 484,295" title="Illinois"/>
-        <!-- MI --><polygon class="us-state" points="532,172 580,162 575,208 548,215 540,222" title="Michigan"/>
-        <!-- IN --><polygon class="us-state" points="508,228 548,226 544,280 512,280" title="Indiana"/>
-        <!-- OH --><polygon class="us-state" points="548,226 588,220 582,280 544,280" title="Ohio"/>
-        <!-- KY --><polygon class="us-state" points="512,280 582,278 578,316 510,318" title="Kentucky"/>
-        <!-- TN --><polygon class="us-state" points="510,318 578,316 574,350 508,352" title="Tennessee"/>
-        <!-- MS --><polygon class="us-state" points="468,350 508,352 504,390 466,388" title="Mississippi"/>
-        <!-- AL --><polygon class="us-state" points="508,352 544,350 540,394 504,394" title="Alabama"/>
-        <!-- GA --><polygon class="us-state" points="544,350 580,346 577,400 540,400" title="Georgia"/>
-        <!-- FL --><polygon class="us-state" points="540,400 577,400 584,450 558,468 535,455 534,425" title="Florida"/>
-        <!-- SC --><polygon class="us-state" points="580,312 612,306 608,348 580,350" title="South Carolina"/>
-        <!-- NC --><polygon class="us-state" points="578,280 622,274 618,312 578,316" title="North Carolina"/>
-        <!-- VA --><polygon class="us-state" points="582,248 628,242 622,280 582,280" title="Virginia"/>
-        <!-- WV --><polygon class="us-state" points="580,248 582,280 560,282 556,252" title="West Virginia"/>
-        <!-- PA --><polygon class="us-state" points="582,222 632,216 628,248 582,248" title="Pennsylvania"/>
-        <!-- NY --><polygon class="us-state" points="588,192 660,186 655,222 582,222" title="New York"/>
-        <!-- MD --><polygon class="us-state" points="626,245 650,241 647,256 625,258" title="Maryland"/>
-        <!-- DE --><polygon class="us-state" points="650,238 662,237 660,252 648,253" title="Delaware"/>
-        <!-- NJ --><polygon class="us-state" points="652,218 666,216 662,240 648,242" title="New Jersey"/>
-        <!-- CT --><polygon class="us-state" points="660,202 674,200 672,213 658,214" title="Connecticut"/>
-        <!-- RI --><polygon class="us-state" points="674,200 682,199 681,208 672,208" title="Rhode Island"/>
-        <!-- MA --><polygon class="us-state" points="650,188 690,184 688,202 648,204" title="Massachusetts"/>
-        <!-- VT --><polygon class="us-state" points="644,170 658,168 656,188 642,188" title="Vermont"/>
-        <!-- NH --><polygon class="us-state" points="658,168 672,167 670,188 658,188" title="New Hampshire"/>
-        <!-- ME --><polygon class="us-state" points="668,140 706,136 700,176 668,178" title="Maine"/>
-        <!-- Port Pins -->
-        <circle cx="130" cy="300" r="6" fill="#FF6D00"/><text x="95" y="294" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">LA PORT</text>
-        <circle cx="558" cy="455" r="6" fill="#FF6D00"/><text x="563" y="458" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">MIAMI</text>
-        <circle cx="400" cy="430" r="6" fill="#FF6D00"/><text x="362" y="424" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">HOUSTON</text>
-        <circle cx="635" cy="256" r="6" fill="#FF6D00"/><text x="642" y="259" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">BALTIMORE</text>
-        <circle cx="660" cy="220" r="6" fill="#FF6D00"/><text x="667" y="223" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">NEW YORK</text>
-        <circle cx="148" cy="50" r="6" fill="#FF6D00"/><text x="112" y="44" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">SEATTLE</text>
-        <circle cx="476" cy="382" r="6" fill="#FF6D00"/><text x="480" y="376" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">NEW ORLEANS</text>
-        <circle cx="560" cy="400" r="6" fill="#FF6D00"/><text x="564" y="394" fill="#FF6D00" font-size="8" font-family="Barlow,sans-serif" font-weight="700">SAVANNAH</text>
-      </svg>
-      <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#1b3a58;border:1px solid #FF6D00"></div>All 48 States Covered</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#FF6D00;border-radius:50%"></div>Key Port Hubs</div>
-      </div>
+    <!-- Slider Controls -->
+    <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+    <button class="slider-btn next" onclick="nextSlide()">❯</button>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service reveal"><h3>Ground Transport</h3><p>Door-to-door freight delivery across the continent.</p></div>
+      <div class="service reveal"><h3>Air Freight</h3><p>Fast and reliable cargo transport by air.</p></div>
+      <div class="service reveal"><h3>Warehousing</h3><p>Secure storage with real-time inventory tracking.</p></div>
+      <div class="service reveal"><h3>Logistics Consulting</h3><p>Optimize your supply chain with our expertise.</p></div>
     </div>
-  </div>
-</section>
-<section class="about" id="about">
-  <div class="section-label">Who We Are</div>
-  <h2 class="section-title">The People Behind<br>HHT Freight Group</h2>
-  <p class="section-sub">A Private Limited Company registered in India, founded August 2025, with a mission to deliver scalable and reliable third-party logistics across the United States.</p>
-  <div class="team-grid">
-    <div class="team-card"><div class="team-init">HC</div><h4>Himanshu Chaudhary</h4><div class="team-role">Director</div><div class="team-contact"><a href="tel:+918283075134">+91 82830 75134</a></div></div>
-    <div class="team-card"><div class="team-init">HS</div><h4>Harpreet Singh</h4><div class="team-role">Director</div><div class="team-contact"><a href="tel:+919729703590">+91 97297 03590</a></div></div>
-    <div class="team-card"><div class="team-init">TK</div><h4>Twinkle Kala</h4><div class="team-role">Director</div><div class="team-contact"><a href="tel:+919915352975">+91 99153 52975</a></div></div>
-  </div>
-</section>
-<section class="contact" id="contact">
-  <div class="section-label">Reach Us</div>
-  <h2 class="section-title">Let's Move Your<br>Freight Forward</h2>
-  <div class="contact-grid">
-    <div>
-      <p class="section-sub" style="margin-bottom:0">Tell us what you need and our team will get back to you with a tailored freight solution.</p>
-      <div class="contact-info">
-        <div class="contact-item"><div class="cicon">📍</div><div><div class="clabel">Registered Address (India)</div><div class="cvalue">H No. 847, Sector 6, Dharuhera<br>Rewari, Haryana — 123106, India</div></div></div>
-        <div class="contact-item"><div class="cicon">✉️</div><div><div class="clabel">Email</div><div class="cvalue"><a href="mailto:hhtfreightgroup@gmail.com">hhtfreightgroup@gmail.com</a></div></div></div>
-        <div class="contact-item"><div class="cicon">📞</div><div><div class="clabel">Contact Numbers</div><div class="cvalue">Himanshu Chaudhary — <a href="tel:+918283075134">+91 82830 75134</a><br>Harpreet Singh — <a href="tel:+919729703590">+91 97297 03590</a><br>Twinkle Kala — <a href="tel:+919915352975">+91 99153 52975</a></div></div></div>
-      </div>
-    </div>
-    <div>
-      <div class="contact-form">
-        <div class="form-row">
-          <input type="text" id="fname" placeholder="Your Name" required>
-          <input type="text" id="fcompany" placeholder="Company Name">
-        </div>
-        <div class="form-row">
-          <input type="email" id="femail" placeholder="Email Address" required>
-          <input type="tel" id="fphone" placeholder="Phone Number">
-        </div>
-        <select id="fservice">
-          <option value="" disabled selected>Select Service Type</option>
-          <option>Full Truckload (FTL)</option>
-          <option>Less Than Truckload (LTL)</option>
-          <option>Drayage Services</option>
-          <option>Port-to-Port Transport</option>
-        </select>
-        <textarea id="fmessage" placeholder="Describe your freight requirements, origin, destination, timeline..."></textarea>
-        <div class="form-msg" id="formMsg"></div>
-        <button class="submit-btn" id="submitBtn" onclick="submitForm()">Send Quote Request &rarr;</button>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo">HHT <span>FREIGHT</span> GROUP</div>
-      <p class="footer-desc">India-registered 3PL company providing comprehensive freight services across all 48 contiguous US states. Reliable. Efficient. Scalable.</p>
-    </div>
-    <div class="footer-col"><h5>Services</h5><ul><li>Full Truckload (FTL)</li><li>Less Than Truckload (LTL)</li><li>Drayage Services</li><li>Port-to-Port Transport</li></ul></div>
-    <div class="footer-col"><h5>Company</h5><ul><li>About Us</li><li>Our Team</li><li>US Coverage</li><li>Get a Quote</li></ul></div>
-    <div class="footer-col"><h5>Contact</h5><ul><li>hhtfreightgroup@gmail.com</li><li>Dharuhera, Haryana, India</li><li>PIN: 123106</li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 HHT Freight Group Private Limited. Registered in India. All rights reserved.</p></div>
-</footer>
-<script>
-var SCRIPT_URL="https://script.google.com/macros/s/AKfycbyN73vHj48Yqe_lcwN4GT0mWGlLrWHI_A762tyfrLVBVdxqiDOyfFiYY2JyU724Ux2akw/exec";
-function submitForm(){
-  var name=document.getElementById('fname').value.trim();
-  var company=document.getElementById('fcompany').value.trim();
-  var email=document.getElementById('femail').value.trim();
-  var phone=document.getElementById('fphone').value.trim();
-  var service=document.getElementById('fservice').value;
-  var message=document.getElementById('fmessage').value.trim();
-  var btn=document.getElementById('submitBtn');
-  var msg=document.getElementById('formMsg');
-  if(!name||!email){msg.textContent="Please fill in your name and email address.";msg.className="form-msg error";msg.style.display="block";return;}
-  btn.disabled=true;btn.textContent="Sending...";msg.style.display="none";
-  fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:name,company:company,email:email,phone:phone,service:service,message:message})})
-  .then(function(){
-    msg.textContent="Your quote request has been sent! We'll get back to you shortly.";
-    msg.className="form-msg success";msg.style.display="block";btn.textContent="Sent Successfully";
-    document.getElementById('fname').value='';document.getElementById('fcompany').value='';
-    document.getElementById('femail').value='';document.getElementById('fphone').value='';
-    document.getElementById('fservice').selectedIndex=0;document.getElementById('fmessage').value='';
-  })
-  .catch(function(){
-    msg.textContent="Something went wrong. Please email us directly at hhtfreightgroup@gmail.com";
-    msg.className="form-msg error";msg.style.display="block";
-    btn.disabled=false;btn.textContent="Send Quote Request";
-  });
-}
-document.querySelectorAll('.us-state').forEach(function(s){
-  s.addEventListener('mouseenter',function(){
-    var t=document.createElement('div');
-    t.style.cssText='position:fixed;background:#FF6D00;color:#fff;padding:4px 10px;font-size:12px;font-family:Barlow,sans-serif;font-weight:700;pointer-events:none;z-index:999;border-radius:2px';
-    t.textContent=this.getAttribute('title');t.id='map-tip';document.body.appendChild(t);
-  });
-  s.addEventListener('mousemove',function(e){var t=document.getElementById('map-tip');if(t){t.style.left=(e.clientX+12)+'px';t.style.top=(e.clientY-28)+'px';}});
-  s.addEventListener('mouseleave',function(){var t=document.getElementById('map-tip');if(t)t.remove();});
-});
-</script>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a leading logistics provider committed to exceptional service. Our nationwide network covers all major routes with advanced tracking technology【21†L5-L13】【23†L83-L91】. With decades of experience, we ensure your freight is handled by experts.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- JavaScript for Slider and Scroll Animations -->
+  <script>
+    // Hero Slider Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(index) {
+      const slidesContainer = document.querySelector('.slides');
+      slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+    // Auto-advance every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Scroll-triggered reveal for service cards (inspired by modern CSS scroll animations【39†L141-L149】)
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>
