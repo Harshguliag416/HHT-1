@@ -8,19 +8,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#0B1C2E;
-  --navy2:#122236;
-  --blue2:#1976D2;
-  --orange:#E65100;
-  --orange2:#FF6D00;
-  --gray:#8899AA;
-  --border:rgba(255,255,255,0.08);
-  --border2:rgba(255,255,255,0.15);
+  --navy:#0B1C2E;--navy2:#122236;--blue2:#1976D2;
+  --orange:#E65100;--orange2:#FF6D00;
+  --gray:#8899AA;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);
 }
 html{scroll-behavior:smooth}
 body{font-family:'Barlow',sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,28,46,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;letter-spacing:1px;color:#fff}
 .logo span{color:var(--orange2)}
@@ -29,13 +22,10 @@ nav ul a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:14px;font-w
 nav ul a:hover{color:var(--orange2)}
 .nav-cta{background:var(--orange);color:#fff;border:none;padding:10px 22px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;cursor:pointer;text-transform:uppercase;transition:background .2s}
 .nav-cta:hover{background:var(--orange2)}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:80px 5vw 60px;position:relative;overflow:hidden;gap:60px}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B1C2E 55%,#122236 100%);z-index:0}
 .hero-road{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(to top,#0a1828,transparent);z-index:1}
 .hero-lines{position:absolute;right:0;top:0;bottom:0;width:50%;z-index:1;opacity:0.04;background:repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 80px)}
-
 .hero-left{position:relative;z-index:2}
 .hero-badge{display:inline-block;background:rgba(230,81,0,0.15);border:1px solid rgba(230,81,0,0.4);color:var(--orange2);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;margin-bottom:24px}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,6vw,88px);font-weight:800;line-height:0.95;letter-spacing:-1px;text-transform:uppercase;margin-bottom:24px}
@@ -49,50 +39,39 @@ nav ul a:hover{color:var(--orange2)}
 .hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
 .stat-num{font-family:'Barlow Condensed',sans-serif;font-size:38px;font-weight:800;color:var(--orange2);line-height:1}
 .stat-lbl{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-
-/* HERO RIGHT — IMAGE + INFO BOXES */
 .hero-right{position:relative;z-index:2;display:flex;flex-direction:column;gap:16px}
 .hero-img-wrap{position:relative;width:100%}
 .hero-img-wrap img{width:100%;height:300px;object-fit:cover;display:block}
 .hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,28,46,0.5),transparent)}
-
 .info-boxes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .info-box{background:var(--navy2);border:1px solid var(--border2);padding:20px 18px;transition:border-color .2s}
 .info-box:hover{border-color:var(--orange2)}
 .info-box-icon{font-size:20px;margin-bottom:10px}
 .info-box-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange2);margin-bottom:6px}
-.info-box-val{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;font-weight:400}
+.info-box-val{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5}
 .info-box-val a{color:rgba(255,255,255,0.75);text-decoration:none}
 .info-box-val a:hover{color:var(--orange2)}
-
-/* TRUST BAR */
 .trust{background:var(--orange);padding:24px 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
 .trust-item{display:flex;align-items:center;gap:10px}
 .trust-icon{font-size:20px}
 .trust-text{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff}
-
-/* SERVICES */
 .services{background:#0d1f30;padding:100px 5vw}
 .section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange2);margin-bottom:16px}
 .section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(34px,5vw,54px);font-weight:800;text-transform:uppercase;margin-bottom:16px;line-height:1.05}
 .section-sub{font-size:16px;color:rgba(255,255,255,0.55);max-width:560px;line-height:1.7;margin-bottom:60px;font-weight:300}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px}
-.service-card{background:var(--navy2);padding:0;border-left:3px solid transparent;transition:border-color .2s,background .2s;overflow:hidden}
+.service-card{background:var(--navy2);border-left:3px solid transparent;transition:border-color .2s,background .2s;overflow:hidden}
 .service-card:hover{border-left-color:var(--orange2);background:#142840}
 .service-img{width:100%;height:180px;object-fit:cover;display:block}
 .service-body{padding:28px 28px 32px}
 .service-icon{font-size:32px;margin-bottom:14px;display:block}
 .service-card h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;color:#fff}
 .service-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300}
-
-/* COVERAGE */
 .coverage{background:var(--navy);padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .coverage-img{width:100%;height:360px;object-fit:cover;display:block}
 .coverage-dots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
 .cdot{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65)}
 .cdot::before{content:'';width:7px;height:7px;background:var(--orange2);flex-shrink:0}
-
-/* ABOUT / TEAM */
 .about{background:#0d1f30;padding:100px 5vw}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:60px}
 .team-card{background:var(--navy2);padding:40px 32px;position:relative;overflow:hidden;transition:background .2s}
@@ -104,8 +83,6 @@ nav ul a:hover{color:var(--orange2)}
 .team-role{font-size:11px;color:var(--orange2);text-transform:uppercase;letter-spacing:2px;font-weight:600;margin-bottom:14px}
 .team-contact a{color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none}
 .team-contact a:hover{color:var(--orange2)}
-
-/* CONTACT */
 .contact{background:var(--navy);padding:100px 5vw}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .contact-info{display:flex;flex-direction:column;gap:28px;margin-top:40px}
@@ -124,8 +101,10 @@ nav ul a:hover{color:var(--orange2)}
 .contact-form textarea{resize:vertical;min-height:120px}
 .submit-btn{background:var(--orange);color:#fff;border:none;padding:15px;font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background .2s;width:100%}
 .submit-btn:hover{background:var(--orange2)}
-
-/* FOOTER */
+.submit-btn:disabled{background:#555;cursor:not-allowed}
+.form-msg{padding:14px 16px;font-size:14px;font-weight:600;text-align:center;display:none}
+.form-msg.success{background:rgba(0,200,100,0.15);border:1px solid rgba(0,200,100,0.3);color:#4ade80}
+.form-msg.error{background:rgba(255,50,50,0.15);border:1px solid rgba(255,50,50,0.3);color:#f87171}
 footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--border)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:48px;flex-wrap:wrap;margin-bottom:48px}
 .footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:1px}
@@ -136,7 +115,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
 .footer-col ul li{font-size:13px;color:rgba(255,255,255,0.5)}
 .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:center}
 .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.25)}
-
 @media(max-width:900px){
   nav ul{display:none}
   .hero{grid-template-columns:1fr}
@@ -150,7 +128,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">HHT <span>FREIGHT</span> GROUP</div>
   <ul>
@@ -162,12 +139,10 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-road"></div>
   <div class="hero-lines"></div>
-
   <div class="hero-left">
     <div class="hero-badge">Established Aug 2025 · India Registered · US Operations</div>
     <h1>Moving Freight<span class="line2">Across America</span></h1>
@@ -182,8 +157,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
       <div><div class="stat-num">3PL</div><div class="stat-lbl">Experts</div></div>
     </div>
   </div>
-
-  <!-- RIGHT: IMAGE + INFO BOXES -->
   <div class="hero-right">
     <div class="hero-img-wrap">
       <img src="images/hero-truck.jpg" alt="HHT Freight Truck">
@@ -218,7 +191,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
   </div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust">
   <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Registered Company</span></div>
   <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Private Limited</span></div>
@@ -226,7 +198,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
   <div class="trust-item"><span class="trust-icon">✓</span><span class="trust-text">Scalable 3PL</span></div>
 </div>
 
-<!-- SERVICES -->
 <section class="services" id="services">
   <div class="section-label">What We Offer</div>
   <h2 class="section-title">Freight Solutions<br>Built for Every Need</h2>
@@ -245,7 +216,7 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
       <div class="service-body">
         <span class="service-icon">📦</span>
         <h3>Less Than Truckload (LTL)</h3>
-        <p>Cost-effective freight for smaller loads. Share truck space and pay only for what you use — without compromising on speed.</p>
+        <p>Cost-effective freight for smaller loads. Share truck space and pay only for what you use without compromising on speed.</p>
       </div>
     </div>
     <div class="service-card">
@@ -257,17 +228,16 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
       </div>
     </div>
     <div class="service-card">
-      <img src="images/cargo-ship.jpg" class="service-img" alt="Port to Port Transport">
+      <img src="images/cargo-ship.jpg" class="service-img" alt="Port to Port">
       <div class="service-body">
         <span class="service-icon">🌊</span>
         <h3>Port-to-Port Transport</h3>
-        <p>Seamless intermodal logistics from port to destination. We manage every transfer so your goods arrive on time, every time.</p>
+        <p>Seamless intermodal logistics from port to destination. Every transfer managed so your goods arrive on time, every time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COVERAGE -->
 <section class="coverage" id="coverage">
   <div>
     <div class="section-label">Our Reach</div>
@@ -285,7 +255,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
   <img src="images/warehouse-automation.jpg" class="coverage-img" alt="Warehouse Operations">
 </section>
 
-<!-- ABOUT / TEAM -->
 <section class="about" id="about">
   <div class="section-label">Who We Are</div>
   <h2 class="section-title">The People Behind<br>HHT Freight Group</h2>
@@ -312,7 +281,6 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-label">Reach Us</div>
   <h2 class="section-title">Let's Move Your<br>Freight Forward</h2>
@@ -348,14 +316,12 @@ footer{background:#070f18;padding:60px 5vw 32px;border-top:1px solid var(--borde
       </div>
     </div>
     <div>
-      <div class="contact-form">
+      <div class="contact-form" id="contactForm">
         <div class="form-row">
-          <input type="text" placeholder="Your Name">
-          <input type="text" placeholder="Company Name">
+          <input type="text" id="fname" placeholder="Your Name" required>
+          <input type="text" id="fcompany" placeholder="Company Name">
         </div>
         <div class="form-row">
-          <input type="email" placeholder="Email Address">
-          <input type="tel" placeholder="Phone Number">
-        </div>
-        <select>
-          <option value="
+          <input type="email" id="femail" placeholder="Email Address" required>
+          <input type="tel" id="fphone" placeholder="Phone Number">
+ 
