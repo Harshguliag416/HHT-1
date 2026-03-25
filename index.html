@@ -250,7 +250,7 @@ footer{background:#f8f9fa;padding:60px 5vw 32px;border-top:1px solid var(--borde
   .page-layer{transition:opacity .3s ease,transform .3s ease}
   .has-js body.intro-active .page-layer{transform:none}
   .splash-screen{background:#f8f9fa}
-  .splash-brand{animation:splashPopMobile 1.02s ease-out forwards}
+  .splash-brand{animation:splashPopMobile 1.28s ease-out forwards}
   nav{padding:10px 16px 14px;gap:10px}
   .brand-link{gap:0}
   .brand-mark{height:var(--brand-frame-height)}
@@ -705,7 +705,7 @@ const splashScreen = document.getElementById('splashScreen');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const compactIntro = window.matchMedia('(max-width: 820px)').matches;
 const introTimings = compactIntro
-  ? { reveal: 360, fade: 620, finish: 900 }
+  ? { reveal: 520, fade: 900, finish: 1260 }
   : { reveal: 620, fade: 920, finish: 1240 };
 
 function syncNavHeight() {
