@@ -250,7 +250,7 @@ footer{background:#f8f9fa;padding:60px 5vw 32px;border-top:1px solid var(--borde
   .page-layer{transition:opacity .3s ease,transform .3s ease}
   .has-js body.intro-active .page-layer{transform:none}
   .splash-screen{background:#f8f9fa}
-  .splash-brand{animation:splashPopMobile .82s ease-out forwards}
+  .splash-brand{animation:splashPopMobile 1.02s ease-out forwards}
   nav{padding:10px 16px 14px;gap:10px}
   .brand-link{gap:0}
   .brand-mark{height:var(--brand-frame-height)}
@@ -381,9 +381,9 @@ footer{background:#f8f9fa;padding:60px 5vw 32px;border-top:1px solid var(--borde
         <div class="info-box-icon">&#128222;</div>
         <div class="info-box-label">Contact</div>
         <div class="info-box-val">
-          <a href="tel:+918283075134">+91 82830 75134</a><br>
-          <a href="tel:+919729703590">+91 97297 03590</a><br>
-          <a href="tel:+919915352975">+91 99153 52975</a>
+          Himanshu Chaudhary - <a href="tel:+918283075134">+91 82830 75134</a><br>
+          Harpreet singh - <a href="tel:+919729703590">+91 97297 03590</a><br>
+          Twinkle Kala - <a href="tel:+919915352975">+91 99153 52975</a>
         </div>
       </div>
     </div>
@@ -705,7 +705,7 @@ const splashScreen = document.getElementById('splashScreen');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const compactIntro = window.matchMedia('(max-width: 820px)').matches;
 const introTimings = compactIntro
-  ? { reveal: 280, fade: 430, finish: 620 }
+  ? { reveal: 360, fade: 620, finish: 900 }
   : { reveal: 620, fade: 920, finish: 1240 };
 
 function syncNavHeight() {
