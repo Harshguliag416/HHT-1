@@ -215,6 +215,16 @@ body.intro-active .site-shell {
   letter-spacing: -0.02em;
 }
 
+.brand-text strong .brand-word-blue,
+.footer-brand .brand-text strong .brand-word-blue {
+  color: var(--brand-blue-deep);
+}
+
+.brand-text strong .brand-word-red,
+.footer-brand .brand-text strong .brand-word-red {
+  color: var(--brand-red);
+}
+
 .brand-text span {
   color: var(--muted);
   font-size: 0.88rem;
