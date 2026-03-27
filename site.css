@@ -1392,3 +1392,11 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
 
   z-index: -1;
 }
+.service-card {
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
