@@ -127,24 +127,24 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <div class="field-row">
     <label>
       Name
-      <input type="text" placeholder="Your name">
+      <input id="formName" type="text" placeholder="Your name">
     </label>
 
     <label>
       Company
-      <input type="text" placeholder="Company name">
+      <input id="formCompany" type="text" placeholder="Company name">
     </label>
   </div>
 
   <div class="field-row">
     <label>
       Email
-      <input type="email" placeholder="Email address">
+    <input id="formEmail" type="email" placeholder="Email address">
     </label>
 
     <label>
       Phone
-      <input type="tel" placeholder="Phone number">
+      <input id="formPhone" type="tel" placeholder="Phone number">
     </label>
   </div>
 
@@ -152,12 +152,13 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <div class="field-row">
     <label>
       Pickup Location
-      <input type="text" placeholder="City / Warehouse / Port">
+      <input id="formPickup" type="text" placeholder="City / Warehouse / Port">
     </label>
 
     <label>
       Delivery Location
-      <input type="text" placeholder="City / Warehouse / Port">
+      <input id="formDelivery" type="text" placeholder="City / Warehouse / Port">
+
     </label>
   </div>
 
@@ -165,31 +166,31 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <div class="field-row">
     <label>
       Freight Type
-      <input type="text" placeholder="General / FMCG / Machinery / etc">
+      <input id="formFreightType" type="text" placeholder="General / FMCG / Machinery / etc">
     </label>
 
     <label>
       Weight (kg/tons)
-      <input type="text" placeholder="Approx weight">
+      <input id="formWeight" type="text" placeholder="Approx weight">
     </label>
   </div>
 
   <div class="field-row">
     <label>
       Shipment Size
-      <input type="text" placeholder="Pallets / Containers / Units">
+      <input id="formShipmentSize" type="text" placeholder="Pallets / Containers / Units">
     </label>
 
     <label>
       Pickup Date
-      <input type="date">
+      <input id="formPickupDate" type="date">
     </label>
   </div>
 
   <!-- SERVICE -->
   <label>
     Service Required
-    <select>
+    <select id="formService">
       <option>Select service type</option>
       <option>Full Truckload (FTL)</option>
       <option>Less Than Truckload (LTL)</option>
@@ -201,7 +202,7 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <!-- EQUIPMENT -->
   <label>
     Equipment Required
-    <select>
+    <select id="formEquipment">
       <option>Select equipment</option>
       <option>Dry Van</option>
       <option>Reefer</option>
@@ -213,11 +214,11 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <!-- DETAILS -->
   <label>
     Shipment Details
-    <textarea rows="5" placeholder="Origin, destination, freight type, timeline, special instructions"></textarea>
+    <textarea id="formMessage" rows="5" placeholder="Origin, destination, freight type, timeline, special instructions"></textarea>
   </label>
 
   <!-- BUTTON -->
-  <button class="button" type="submit">Request Quote</button>
+  <button class="button" type="button" onclick="submitForm()">Request Quote</button>
 
 </form>    </div>
 
@@ -305,5 +306,47 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
       </div>
     </div>
   </footer>
+<script>
+function submitForm() {
+  const payload = {
+    name:         document.getElementById('formName').value,
+    company:      document.getElementById('formCompany').value,
+    email:        document.getElementById('formEmail').value,
+    phone:        document.getElementById('formPhone').value,
+    pickup:       document.getElementById('formPickup').value,
+    delivery:     document.getElementById('formDelivery').value,
+    freightType:  document.getElementById('formFreightType').value,
+    weight:       document.getElementById('formWeight').value,
+    shipmentSize: document.getElementById('formShipmentSize').value,
+    pickupDate:   document.getElementById('formPickupDate').value,
+    service:      document.getElementById('formService').value,
+    equipment:    document.getElementById('formEquipment').value,
+    message:      document.getElementById('formMessage').value
+  };
+
+  if (!payload.name || !payload.email) {
+    alert('Please fill in at least your name and email.');
+    return;
+  }
+
+  fetch('https://script.google.com/macros/s/AKfycbxWqxNJ2dVPnWiwHvYE0_JpGrHG1anxnkpWHKW-w4kv00hjyjVnSNWxkuFR-yUJEuj-/exec', {
+    method: 'POST',
+    body: JSON.stringify(payload)
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert('✅ Quote request sent! We will contact you within 24 hours.');
+    ['formName','formCompany','formEmail','formPhone','formPickup',
+     'formDelivery','formFreightType','formWeight','formShipmentSize',
+     'formPickupDate','formService','formEquipment','formMessage']
+    .forEach(id => document.getElementById(id).value = '');
+  })
+  .catch(() => {
+    alert('Something went wrong. Please email us at hhtfreightgroup@gmail.com');
+  });
+}
+</script>
+</body>
+</html>      
 </body>
 </html>
