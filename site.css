@@ -1,6 +1,6 @@
 :root {
   --bg: #eef3fb;
-  --surface: rgba(255, 255, 255, 0.92);
+  --surface: rgba(255, 255, 255, 0.75);
   --surface-strong: #ffffff;
   --text: #1d2a3b;
   --muted: #5b687a;
@@ -126,10 +126,9 @@ body.intro-active .site-shell {
   display: grid;
   place-items: center;
   padding: 24px;
-  background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.98), rgba(219, 230, 255, 0.92)),
-    linear-gradient(135deg, rgba(37, 88, 216, 0.12), rgba(255, 255, 255, 0.96));
-  transition: opacity 0.45s ease, visibility 0.45s ease;
+  background: radial-gradient(ellipse at 50% 40%, #c3d2ee 0%, #a1b6e6 70%, #5989d7 100%);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
 }
 
 .intro-screen.is-hidden {
@@ -137,30 +136,32 @@ body.intro-active .site-shell {
   visibility: hidden;
   pointer-events: none;
 }
-
 .intro-card {
-  width: min(100%, 560px);
-  padding: 40px 34px;
-  border-radius: 32px;
-  border: 1px solid rgba(17, 47, 119, 0.08);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 24px 60px rgba(17, 47, 119, 0.14);
+  position: relative;
+  padding: 44px 48px;
+  border-radius: 28px;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  box-shadow: none;
+  border: none;
+  animation: floatCard 5s ease-in-out infinite;
   text-align: center;
-  animation: introPop 1.05s cubic-bezier(0.2, 0.85, 0.25, 1) forwards;
+  z-index: 2;
 }
-
 .intro-logo {
-  width: min(180px, 42vw);
-  margin: 0 auto 18px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 16px 32px rgba(17, 47, 119, 0.12);
-}
-
-.intro-logo img {
+  width: min(160px, 38vw);
+  margin: 0 auto 24px;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}.intro-logo img {
   width: 100%;
   height: auto;
+
+  filter: drop-shadow(0 10px 25px rgba(0,102,255,0.25));
+
   object-fit: contain;
   transform: scale(1.12);
 }
@@ -171,18 +172,20 @@ body.intro-active .site-shell {
   font-size: clamp(1.8rem, 4vw, 3.2rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
 .intro-title span {
-  color: var(--accent-deep);
+  color: #60a5fa;
 }
 
 .intro-copy {
   margin: 0;
-  color: var(--muted);
+  color: #1a2e5a;
   font-size: 1rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
 }
-
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -1185,6 +1188,7 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
     padding: 32px 24px;
   }
 
+
   .home-hero {
     padding-bottom: 36px;
   }
@@ -1361,4 +1365,30 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 25px;
   margin-top: 30px;
+}
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}}
+@media (max-width: 768px) {
+  .intro-card {
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.2);
+  }
+}
+.intro-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0,102,255,0.08),
+    transparent 100%
+  );
+
+  z-index: -1;
 }
