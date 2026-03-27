@@ -15,7 +15,7 @@
       <a class="brand" href="index.html" aria-label="HHT Freight Group home">
         <span class="brand-mark"><img src="logo.jpg" alt="HHT Freight Group logo"></span>
         <span class="brand-text">
-          <strong>HHT Freight Group</strong>
+          <strong><span class="brand-word-blue">HHT</span> <span class="brand-word-red">Freight</span> <span class="brand-word-blue">Group</span></strong>
           <span>India-managed 3PL for US lanes</span>
         </span>
       </a>
@@ -121,34 +121,30 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
         Provide key shipment information so our team can evaluate routing, allocate capacity, and recommend the most suitable logistics solution.
       </p>
 
-<form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="a0382d26-eb83-4bc4-bcb0-4a8a968402fc">
-  <input type="hidden" name="subject" value="🚛 New Quote Request - HHT Freight Group">
-  <input type="hidden" name="from_name" value="HHT Freight Website">
-  
+<form class="inquiry-form" action="#">
 
   <!-- BASIC INFO -->
   <div class="field-row">
     <label>
       Name
-      <input id="formName" name="Name" type="text" placeholder="Your name">
+      <input type="text" placeholder="Your name">
     </label>
 
     <label>
       Company
-      <input id="formCompany" name="Company" type="text" placeholder="Company name">
+      <input type="text" placeholder="Company name">
     </label>
   </div>
 
   <div class="field-row">
     <label>
       Email
-      <input id="formEmail" name="Email" type="email" placeholder="Email address">
+      <input type="email" placeholder="Email address">
     </label>
 
     <label>
       Phone
-      <input id="formPhone" name="Phone" type="tel" placeholder="Phone number">
+      <input type="tel" placeholder="Phone number">
     </label>
   </div>
 
@@ -156,12 +152,12 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <div class="field-row">
     <label>
       Pickup Location
-      <input id="formPickup" name="Pickup Location" type="text" placeholder="City / Warehouse / Port">
+      <input type="text" placeholder="City / Warehouse / Port">
     </label>
 
     <label>
       Delivery Location
-      <input id="formDelivery" name="Delivery Location" type="text" placeholder="City / Warehouse / Port">
+      <input type="text" placeholder="City / Warehouse / Port">
     </label>
   </div>
 
@@ -169,31 +165,31 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <div class="field-row">
     <label>
       Freight Type
-      <input id="formFreightType" name="Freight Type" type="text" placeholder="General / FMCG / Machinery / etc">
+      <input type="text" placeholder="General / FMCG / Machinery / etc">
     </label>
 
     <label>
       Weight (kg/tons)
-      <input id="formWeight" name="Weight" type="text" placeholder="Approx weight">
+      <input type="text" placeholder="Approx weight">
     </label>
   </div>
 
   <div class="field-row">
     <label>
       Shipment Size
-      <input id="formShipmentSize" name="Shipment Size" type="text" placeholder="Pallets / Containers / Units">
+      <input type="text" placeholder="Pallets / Containers / Units">
     </label>
 
     <label>
       Pickup Date
-      <input id="formPickupDate" name="Pickup Date" type="date">
+      <input type="date">
     </label>
   </div>
 
   <!-- SERVICE -->
   <label>
     Service Required
-    <select id="formService" name="Service Required">
+    <select>
       <option>Select service type</option>
       <option>Full Truckload (FTL)</option>
       <option>Less Than Truckload (LTL)</option>
@@ -205,7 +201,7 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <!-- EQUIPMENT -->
   <label>
     Equipment Required
-    <select id="formEquipment" name="Equipment Required">
+    <select>
       <option>Select equipment</option>
       <option>Dry Van</option>
       <option>Reefer</option>
@@ -217,19 +213,22 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
   <!-- DETAILS -->
   <label>
     Shipment Details
-    <textarea id="formMessage" name="Shipment Details" rows="5" placeholder="Origin, destination, freight type, timeline, special instructions"></textarea>
+    <textarea rows="5" placeholder="Origin, destination, freight type, timeline, special instructions"></textarea>
   </label>
 
- <!-- BUTTON -->
+  <!-- BUTTON -->
   <button class="button" type="submit">Request Quote</button>
 
-</form>
-    </div>
+</form>    </div>
 
     <!-- RIGHT: INFO -->
     <div>
       <p class="section-kicker">Shipment Information</p>
-      <h2 class="section-title">Key details required for efficient freight coordination</h2>
+
+      <h2 class="section-title">
+        Key details required for efficient freight coordination
+      </h2>
+
       <ul class="list-check">
         <li>Pickup and delivery locations including warehouses or terminals</li>
         <li>Freight type, dimensions, weight, or container specifications</li>
@@ -237,7 +236,29 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
         <li>Preferred pickup date, delivery schedule, and urgency level</li>
         <li>Special handling instructions, site access details, or route constraints</li>
       </ul>
-    </div>
+
+      <div class="photo-grid compact">
+
+      <div class="photo-grid compact">
+
+  <!-- TOP 2 -->
+  <article class="photo-card medium">
+    <img src="contact-office-01.jpg" alt="Operations office">
+    <figcaption>Operations coordination and support</figcaption>
+  </article>
+
+  <article class="photo-card medium">
+    <img src="contact-team-01.jpg" alt="Team coordination">
+    <figcaption>Team support for shipment planning</figcaption>
+  </article>
+
+  <!-- FULL WIDTH BELOW -->
+  <figure class="photo-card wide">
+    <img src="hero-truck.jpg" alt="Freight transport">
+    <figcaption>Freight movement and execution support</figcaption>
+  </figure>
+
+</div>
 
   </div>
 </section>
@@ -249,7 +270,7 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
         <a class="brand footer-brand" href="index.html">
           <span class="brand-mark"><img src="logo.jpg" alt="HHT Freight Group logo"></span>
           <span class="brand-text">
-            <strong>HHT Freight Group</strong>
+            <strong><span class="brand-word-blue">HHT</span> <span class="brand-word-red">Freight</span> <span class="brand-word-blue">Group</span></strong>
             <span>Contact and quote page</span>
           </span>
         </a>
@@ -275,6 +296,7 @@ HHT Freight Group provides direct access to logistics coordination, shipment pla
       <div>
         <h3>Direct Contact</h3>
         <ul class="footer-links">
+          
           <li><a href="tel:+918283075134">+91 8283075134</a></li>
           <li><a href="tel:+919729703590">+91 9729703590</a></li>
           <li><a href="tel:+919915352975">+91 9915352975</a></li>
