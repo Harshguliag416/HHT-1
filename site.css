@@ -821,6 +821,7 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
   object-fit: cover;
 }
 
+
 .photo-card figcaption,
 .photo-card.placeholder p,
 .photo-card.placeholder span {
@@ -991,7 +992,7 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
 }
 
 .site-footer {
-  padding: 18px 0 48px;
+  padding: 22px 0 50px;
 }
 
 .footer-grid {
@@ -1399,4 +1400,122 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+.no-gap {
+  padding-bottom: 10px !important;
+}
+/* REMOVE GAP ONLY ON LTL PAGE LAST SECTION */
+.page-ltl .section:last-of-type {
+  padding-bottom: 10px !important;
+}
+/* GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.team-card {
+  background: linear-gradient(135deg, #eaf2ff, #dbe8ff);
+  padding: 25px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* ROLE */
+.team-card .role {
+  color: #0066ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* PHONE */
+.team-card .phone {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* BIO */
+.team-card .bio {
+  font-size: 14px;
+  color: #555;
+}
+/* TIMELINE STYLE */
+.timeline {
+  display: grid;
+  gap: 20px;
+}
+
+.timeline-item {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border-left: 4px solid #0066ff;
+  transition: 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.timeline-item span {
+  font-size: 14px;
+  color: #0066ff;
+  font-weight: 600;
+}
+/* ===== FINAL CONTACT IMAGE FIX ===== */
+
+.contact-grid .photo-grid.compact {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ALL CARDS SAME HEIGHT */
+.contact-grid .photo-card {
+  height: 280px;
+  width: 400px;
+  overflow: hidden;
+}
+
+/* BIG IMAGE SLIGHTLY BIGGER */
+.contact-grid .photo-card:last-child {
+  height: 180px;
+}
+
+/* IMAGE FIT */
+.contact-grid .photo-card img {
+  width: auto;
+  height:auto ;
+  object-fit: cover;
+}
+
+/* REMOVE GRID SYSTEM EFFECT */
+.contact-grid .photo-card.medium,
+.contact-grid .photo-card.wide,
+.contact-grid .photo-card.full {
+  grid-column: auto !important;
 }
