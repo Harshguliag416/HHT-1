@@ -331,9 +331,10 @@ function submitForm() {
 
   fetch('https://script.google.com/macros/s/AKfycbxWqxNJ2dVPnWiwHvYE0_JpGrHG1anxnkpWHKW-w4kv00hjyjVnSNWxkuFR-yUJEuj-/exec', {
     method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
-  .then(res => res.json())
   .then(() => {
     alert('✅ Quote request sent! We will contact you within 24 hours.');
     ['formName','formCompany','formEmail','formPhone','formPickup',
