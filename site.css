@@ -1240,3 +1240,49 @@ body.page-home.reveal-ready .hero-floating-card.is-visible {
 .hero-display {
   font-size: 4rem !important;
 }
+/* ===== FINAL WATERMARK FIX ===== */
+
+.intro-watermark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden; /* 🔥 FIX CUT ISSUE */
+}
+
+/* TOP TEXT */
+.intro-watermark .wm-top {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%); /* 🔥 CENTER FIX */
+
+  font-size: 250px;
+  font-weight: 900;
+  letter-spacing: 10px;
+
+  color: rgba(0, 102, 255, 0.06);
+  white-space: nowrap;
+
+  text-shadow: 0 0 40px rgba(0,102,255,0.08);
+}
+
+/* BOTTOM TEXT */
+.intro-watermark .wm-bottom {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%); /* 🔥 CENTER FIX */
+
+  font-size: 250px;
+  font-weight: 900;
+  letter-spacing: 10px;
+
+  color: rgba(0, 102, 255, 0.06);
+  white-space: nowrap;
+
+  text-shadow: 0 0 40px rgba(0,102,255,0.08);
+}
